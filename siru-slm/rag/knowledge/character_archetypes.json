@@ -1,0 +1,72 @@
+[
+  {
+    "id": "c001",
+    "archetype": "The Mass Hero",
+    "description": "Speaks with absolute confidence. Every sentence is a declaration. Uses pauses for effect. Never raises voice -- the calm is the threat.",
+    "dialogue_modes": ["mass"],
+    "reference_characters": ["Baasha (Rajini)", "Pokkiri (Vijay)", "Mankatha (Ajith)"]
+  },
+  {
+    "id": "c002",
+    "archetype": "The Wounded Lover",
+    "description": "Speaks softly, often trailing off. Uses incomplete sentences. Pain leaks through simple words. Never dramatic, always restrained.",
+    "dialogue_modes": ["emotion"],
+    "reference_characters": ["Alaipayuthey (Madhavan)", "Vinnaithaandi Varuvaayaa (Simbu)"]
+  },
+  {
+    "id": "c003",
+    "archetype": "The Sacrificing Mother",
+    "description": "Never speaks about her own pain. Asks practical questions that hide deep worry. Her love is shown through food, chores, and silence.",
+    "dialogue_modes": ["subtext", "emotion"],
+    "reference_characters": ["Asuran (Manju Warrier)", "Jai Bhim (Lijomol Jose)"]
+  },
+  {
+    "id": "c004",
+    "archetype": "The Anti-Hero",
+    "description": "Speaks in contradictions. Says violent things casually. Humor mixed with menace. The audience is never sure if he's joking.",
+    "dialogue_modes": ["mass", "subtext"],
+    "reference_characters": ["Vikram Vedha (Vijay Sethupathi)", "Kaithi (Karthi)"]
+  },
+  {
+    "id": "c005",
+    "archetype": "The Broken Father",
+    "description": "Speaks in orders that are really pleas. Authority masking vulnerability. Repeats his dead wife/child's name without realizing.",
+    "dialogue_modes": ["emotion", "subtext"],
+    "reference_characters": ["Asuran (Dhanush)", "Peranbu (Mammootty)"]
+  },
+  {
+    "id": "c006",
+    "archetype": "The Loyal Friend",
+    "description": "Uses humor to deflect emotion. Never says 'I care' directly. Shows up silently when needed. His jokes ARE his love language.",
+    "dialogue_modes": ["subtext"],
+    "reference_characters": ["Goa (Premgi)", "Nanban (Jiiva)"]
+  },
+  {
+    "id": "c007",
+    "archetype": "The Stylish Villain",
+    "description": "Speaks more than the hero. Eloquent and philosophical. Uses metaphors. His speeches expose his worldview. Dangerously articulate.",
+    "dialogue_modes": ["mass", "subtext"],
+    "reference_characters": ["Indian (Nedumudi Venu)", "Kaththi (Neil)"]
+  },
+  {
+    "id": "c008",
+    "archetype": "The Innocent Girl",
+    "description": "Simple language, direct honesty. Says exactly what she feels. Her straightforwardness contrasts with the hero's complexity.",
+    "dialogue_modes": ["emotion"],
+    "reference_characters": ["96 (Trisha)", "Sita Ramam (Mrunal)"]
+  },
+  {
+    "id": "c009",
+    "archetype": "The Rebel Leader",
+    "description": "Speaks for the people. Short, quotable lines. Every dialogue is a rallying cry. Mix of mass and emotion -- anger born from love.",
+    "dialogue_modes": ["mass", "emotion"],
+    "reference_characters": ["Paruthiveeran (Karthi)", "Karnan (Dhanush)"]
+  },
+  {
+    "id": "c010",
+    "archetype": "The Silent Observer",
+    "description": "Rarely speaks. When they do, it's devastating. One line that changes the entire scene. Their silence has been building to this moment.",
+    "dialogue_modes": ["subtext", "mass"],
+    "reference_characters": ["Nayakan (Kamal)", "Pudhupettai (Dhanush)"]
+  }
+]

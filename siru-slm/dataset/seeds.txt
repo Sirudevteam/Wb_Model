@@ -1,0 +1,117 @@
+# =============================================================================
+# SIRU AI LABS -- Tamil Screenplay Seed Dialogues
+# 100 seed lines: 40 Mass, 40 Emotion, 20 Subtext
+# Format: [CATEGORY] Dialogue line
+# =============================================================================
+
+# --- MASS (40 lines) ---
+# Short, impactful, punch dialogues with authority and pauses
+
+[MASS] Naan oru thadava sonna, nooru thadava sonna maadiri.
+[MASS] En peyarai kettaalae podhum... bayam dhaan varum.
+[MASS] Adhu en vazhi... adha maathura yaralayum mudiyaadhu.
+[MASS] Naan nenacha... nadakkum. Adhu dhaan en style.
+[MASS] Enna yaarum azhicha mudiyaadhu... naan oru thadava mudivu pannittaa, mudinjidhu.
+[MASS] Oruthan kku bayandha naal... avan life la innum bayam dhaan irukku.
+[MASS] Naan tholacha idham illa... naan jayicha kadhai dhaan idhellam.
+[MASS] En munnaadi ninna... un kaala nee paaru.
+[MASS] Naan pesuradhu oru vaati dhaan... kettukkonga.
+[MASS] Oru adiyila nee vizhundha... adhukku naan poruppu illa.
+[MASS] Inga niyaayam pesuna... naan dhaan judge.
+[MASS] Yaar kittayum kai yendi ninnadhu illa... ini nindraalum en termsla dhaan.
+[MASS] En vazhila thuni kidaiyaadhu... ennala mazhai dhaan varum.
+[MASS] Yaaru enna pudichu niruthradhu... naan poradhu ennoda decision.
+[MASS] Naan vandhaachum... ponaachum... oru sattham irukku.
+[MASS] En mela kai vaikkaadha... un kai pogum.
+[MASS] Oruthan ukkaarndha idam... adhu singhaaasanam aagum.
+[MASS] Naan silence aa irundha... adhu puyal ku munnadi silent.
+[MASS] Enaku ethiri illa... irundhaangana... ippo illainga.
+[MASS] En paathai la nadandha... nee un paathai marandhiduva.
+[MASS] Oru thadava mudivu pannittaen... ippo thirumba pesaadha.
+[MASS] Naan thirumbi paakka maaten... ennoda nizhal kooda munnadi dhaan pogum.
+[MASS] En area la en pesa dhaan arimugam.
+[MASS] Yaaraachum kekka poraanga... naan sonna nu sollu, podhum.
+[MASS] Inga rules ellaam naan dhaan podradhu... yaaru kekkaadheenga.
+[MASS] Katham pesa theriyum... aana action la dhaan nambikkai.
+[MASS] Naan irukkura varaikkum... ivanga safe.
+[MASS] En decision ah yaraavathu maathuna... adhu avanoda last decision.
+[MASS] Oru vaarthai podhum... ooru adhirum.
+[MASS] Naan elundha... nilam adhirum. Naan nadandha... vazhiye marum.
+[MASS] Bayapadra alavukku perusa illa naan... bayapadra alavukku dangerous.
+[MASS] En koodave vaa... illa en ethiriye poo. Middle la nirkaadha.
+[MASS] Yaaravadhu kaappaathunganu kekkaadha... naan vandhuttaen.
+[MASS] Paavam paarkaadha en kitta... naan romba nallavan illa.
+[MASS] Ennoda game, ennoda rules, ennoda ground.
+[MASS] Naan pesumbodhu... oor kekkum. Naan summa irundha... oor bayakkum.
+[MASS] Vaaya pudhu... aana kai pazhasu.
+[MASS] En pakkam nee irundhaa... ethuvum un pakkam dhaan.
+[MASS] Oru punch podhum... kadhai mudiyum.
+[MASS] Naan varaen nu sonna idathula... yaaru irundhalum vazhividuvaanga.
+
+# --- EMOTION (40 lines) ---
+# Heartfelt, vulnerable, relationship-driven dialogue
+
+[EMOTION] Un kannula oru thuli kaneer paatha... en uyire pogum.
+[EMOTION] Nee illaama enna irukkadhu... moochu illa body maadiri.
+[EMOTION] Enna vittu pogaadha... naan yaarum illaamal saaganumaa?
+[EMOTION] En vazhla nee mattum dhaan unmai... meedhi ellaam naadagam.
+[EMOTION] Un chirippula dhaan en vazhkkai irukkudhu... azhaadhae.
+[EMOTION] Naan azhudhadu unnakkaga illa... enakkaga... ennai izhandhadhukku.
+[EMOTION] Oru naal nee thirumbi vandha... naan adhe idathula iruppaen.
+[EMOTION] Kadhal nu theriyaamal kadhalichaen... therinjappuram thaangala.
+[EMOTION] Un voice kekkama oru naal pogum bodhu... andha silence kodumaiya irukkudhu.
+[EMOTION] Enna marandhuduvaenu bayam illa... marandhaalum en kadhal maraadhu nu theriyadhu.
+[EMOTION] Nee pogumbodhu en paathi ennoda poachu... meedhi yaarukku venum?
+[EMOTION] Kaadhal kadhai la happyaa mudiyadhunu yaar sonnadhu... naan anubavichirukkaen.
+[EMOTION] En kanneer unnaku theriyaadhu... naan yaaru munnaalayum azharadhu illai.
+[EMOTION] Un kaigal pidichirundha andha naal... ennoda last happy day.
+[EMOTION] Enna vidu nu sollura un vaayilayae en peyar thaan varudhu.
+[EMOTION] Oru thadava ennaiye paaruda... un kanla en bayam theriyum.
+[EMOTION] Naan sirichirundhaalum... ulle azhudhukkittu dhaan irukkaen.
+[EMOTION] Nee ennoda yaaru nu kekkaadha... nee dhaan ennoda ellaam.
+[EMOTION] En thanimayai nee purinjaa... adhuve podhum.
+[EMOTION] Unna nenachu azhuradu mattum dhaan enakku minjirukku.
+[EMOTION] Naan kaathirukkaen... ennai marandhaalum un ninaivugal marakkaadhu.
+[EMOTION] Kadhal nu oru vaarthai... aana adha solla vazhkkaiye pogum.
+[EMOTION] Enna yaarum kekka maataanga... nee kuda kekkala... adhuve valikkudhu.
+[EMOTION] En kanavugal ellaam unnudaiya... nee pogumbodhu kanavum illai.
+[EMOTION] Amma kaiyla saptu vandhavan... ippo kaiyila onnum illaamal nikkuraen.
+[EMOTION] Azhagaana kanavula irundhavan... unmaila vizhi vizhichirukkaan.
+[EMOTION] Oru vaarthai sollirundha... naan poidirukka maaten.
+[EMOTION] En uyiru pogumbodhu un peyar dhaan varum... adhu matum unmayaa irukkattum.
+[EMOTION] Unnai parthadhum chirippaa varum... un ninaivula kanneerum varum.
+[EMOTION] Vazhkkai kadhai la nee oru page thaan... aana en favourite page.
+[EMOTION] En vazhla romba per vandhaanga... aana nee ponathum ellaarum ponaanga.
+[EMOTION] Nee irukkura andha ooru ku enna theriyadhu... nee pogumbodhu naan endha ooru nu.
+[EMOTION] En ponnukku naan hero illa... aana avalu kannula naan irukkuradhuku than naan uyirodirukkaen.
+[EMOTION] Appa kaila adichaalum... amma kanla thaan kanneer varum.
+[EMOTION] Oru naal varum... nee enna purinjirukkanum nu ninaippe... andha naal naan irukka maaten.
+[EMOTION] Ennai thazhi thallidhu nee pogumbodhu... ennai azhuthu azhuthu thaedi vandha un ninaivugal.
+[EMOTION] En kaiyai pudichi nadandha andha vazhi... ippo tholainjiduchi.
+[EMOTION] Nee pona vazhi la oru poovum illaadhu... en kanneer mattum dhaan.
+[EMOTION] Yaaravadhu enna love panra madhiri nadichirukkaanga... nee matum unmaiyaa irundha.
+[EMOTION] En mela kovam varaadhu... en mela paavam varum... adhu podhum.
+
+# --- SUBTEXT (20 lines) ---
+# Surface meaning hides deeper intent -- layered, cinematic
+
+[SUBTEXT] Nalla irukka... romba nalla irukka...
+[SUBTEXT] Sari... un ishtam. Naan yaar solla.
+[SUBTEXT] Azhagaa irukkudhu un veedu... yaarum illaamal.
+[SUBTEXT] Nee manasu vachu irundha... ippo pesikkalamae.
+[SUBTEXT] Paravaillai... naanum pazhakiduvaen.
+[SUBTEXT] Adhukku nee yosikka vendaam... naan paathukkuvaen.
+[SUBTEXT] Unnoda nanban dhaan sonna... nee nalla aalu nu.
+[SUBTEXT] Coffee kudikkalaama... romba naalaachu.
+[SUBTEXT] Naan sirichirundhaalum... puriyudhu illa?
+[SUBTEXT] Nee pogumbodhu kadhavu saaththiduvaenu theriyadhu.
+[SUBTEXT] En vazhkkai la un idam... ippo kaali dhaan.
+[SUBTEXT] Vera yaaraachum kekkuvaanga nu nenaikkaadha... ennoda mudivunnu sonne.
+[SUBTEXT] Veliya mazhai peiyudhu... ulle kooda.
+[SUBTEXT] Un phone la ennoda number irukkaa... irundhaalum parkka maattenu theriyum.
+[SUBTEXT] Oru cup tea podu... adhu kuda un kaiyaalathaane kudichu romba naalachu.
+[SUBTEXT] Ippo thirumba sollu... andha vaarthai ippo vera maadiri kekkum.
+[SUBTEXT] Unna namburaen... adhaan bayama irukkudhu.
+[SUBTEXT] Nee andha pakkam paaraathae... paathaa un kanla theriyum.
+[SUBTEXT] Nallaa thoongu... naalaikku kooda ithaiye pesuvom.
+[SUBTEXT] Vaazhkai azhagaa irukkudhu... yaaru paathaalum adhuve solluvaanga.

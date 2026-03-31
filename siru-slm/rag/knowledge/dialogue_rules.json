@@ -1,0 +1,92 @@
+[
+  {
+    "id": "d001",
+    "category": "mass",
+    "rule": "Tamil mass dialogues use short, impactful lines with dramatic pauses. Maximum 2 lines. The pause (...) is where the audience reacts.",
+    "example": "Naan oru thadava sonna... nooru thadava sonna maadiri."
+  },
+  {
+    "id": "d002",
+    "category": "mass",
+    "rule": "Mass dialogues are declarations, not conversations. The hero speaks AT the world, not TO a person. It's a one-way statement of power.",
+    "example": "En peyarai kettaalae podhum... bayam dhaan varum."
+  },
+  {
+    "id": "d003",
+    "category": "mass",
+    "rule": "The best mass dialogues have a twist or reversal in the second half. The first part sets up, the second part punches.",
+    "example": "Indha ooru la naan pudhusu illa... indha ooru naan vandhadhuku pudhusu."
+  },
+  {
+    "id": "d004",
+    "category": "mass",
+    "rule": "Use simple, everyday Tamil words for mass dialogues. The power comes from rhythm and confidence, not vocabulary.",
+    "example": "En vazhi thani vazhi."
+  },
+  {
+    "id": "d005",
+    "category": "mass",
+    "rule": "Mass dialogue rhythm: Short-Pause-Punch. Set up in 5-7 words, pause, then deliver the knockout in 5-7 more words.",
+    "example": "Naan silence aa irundha... adhu puyal ku munnadi silent."
+  },
+  {
+    "id": "d006",
+    "category": "emotion",
+    "rule": "Emotional Tamil dialogues are understated. The character holds back tears while speaking. The restraint IS the emotion.",
+    "example": "Oru naal nee thirumbi vandha... naan adhe idathula iruppaen."
+  },
+  {
+    "id": "d007",
+    "category": "emotion",
+    "rule": "Use physical sensations to express emotional pain: chest tightness, inability to breathe, loss of vision. Tamil audiences connect with body-felt emotion.",
+    "example": "Nee illaama enna irukkadhu... moochu illa body maadiri."
+  },
+  {
+    "id": "d008",
+    "category": "emotion",
+    "rule": "The most powerful emotional lines in Tamil cinema reference simple daily life -- tea, rain, a hand held, a door closed. Not grand metaphors.",
+    "example": "Un kaigal pidichirundha andha naal... ennoda last happy day."
+  },
+  {
+    "id": "d009",
+    "category": "emotion",
+    "rule": "Emotional dialogues should feel like the character is talking to themselves, not performing for an audience. Internal monologue spoken aloud.",
+    "example": "Naan azhudhadu unnakkaga illa... enakkaga... ennai izhandhadhukku."
+  },
+  {
+    "id": "d010",
+    "category": "emotion",
+    "rule": "Tamil emotional lines gain power through repetition of a key word or phrase. The repeated word changes meaning each time.",
+    "example": "Kadhal nu theriyaamal kadhalichaen... therinjappuram thaangala."
+  },
+  {
+    "id": "d011",
+    "category": "subtext",
+    "rule": "Subtext dialogue says one thing on the surface while meaning the opposite underneath. The gap between surface and truth is where the power lives.",
+    "example": "Nalla irukka... romba nalla irukka..."
+  },
+  {
+    "id": "d012",
+    "category": "subtext",
+    "rule": "The best subtext uses mundane, everyday activities (drinking coffee, asking about health) to hide deep emotional pain or unspoken conflict.",
+    "example": "Coffee kudikkalaama... romba naalaachu."
+  },
+  {
+    "id": "d013",
+    "category": "subtext",
+    "rule": "Subtext works through what is NOT said. The character deliberately avoids the real topic. The silence around the words is louder than the words.",
+    "example": "Veliya mazhai peiyudhu... ulle kooda."
+  },
+  {
+    "id": "d014",
+    "category": "subtext",
+    "rule": "In subtext, the character's body language contradicts their words. Write the line so it could be delivered with a smile that hides tears.",
+    "example": "Paravaillai... naanum pazhakiduvaen."
+  },
+  {
+    "id": "d015",
+    "category": "subtext",
+    "rule": "Subtext dialogues often use questions instead of statements. Asking 'Nalla irukka?' can mean 'I know you're not okay and I can't help.'",
+    "example": "Ippo thirumba sollu... andha vaarthai ippo vera maadiri kekkum."
+  }
+]

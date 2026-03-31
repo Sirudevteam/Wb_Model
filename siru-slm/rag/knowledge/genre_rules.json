@@ -1,0 +1,62 @@
+[
+  {
+    "id": "g001",
+    "category": "action",
+    "rule": "Action genre uses rapid-fire short sentences. Every dialogue is a threat or a challenge. No room for nuance.",
+    "dialogue_style": "mass"
+  },
+  {
+    "id": "g002",
+    "category": "action",
+    "rule": "In action films, the hero's dialogue after defeating the villain should be COOL, not angry. Calm delivery = more mass.",
+    "dialogue_style": "mass"
+  },
+  {
+    "id": "g003",
+    "category": "romance",
+    "rule": "Tamil romance dialogue should never directly say 'I love you' in the first half. Show it through actions described in words.",
+    "dialogue_style": "emotion"
+  },
+  {
+    "id": "g004",
+    "category": "romance",
+    "rule": "Love confession scenes work best with subtext first, then one honest line that breaks through. The contrast is devastating.",
+    "dialogue_style": "subtext"
+  },
+  {
+    "id": "g005",
+    "category": "family_drama",
+    "rule": "Father-son dialogues in Tamil cinema carry generational weight. The father speaks in absolutes. The son speaks in questions.",
+    "dialogue_style": "emotion"
+  },
+  {
+    "id": "g006",
+    "category": "family_drama",
+    "rule": "Mother's dialogue is the emotional anchor. She never says she's sad directly. She asks 'Saapitta?' when she means 'I'm worried.'",
+    "dialogue_style": "subtext"
+  },
+  {
+    "id": "g007",
+    "category": "thriller",
+    "rule": "Thriller dialogue is clipped and precise. Double meanings everywhere. Every casual line should be a potential clue.",
+    "dialogue_style": "subtext"
+  },
+  {
+    "id": "g008",
+    "category": "comedy",
+    "rule": "Tamil comedy dialogue relies on timing and wordplay. Mass in comedy is ironic -- the character thinks they're mass but isn't.",
+    "dialogue_style": "mass"
+  },
+  {
+    "id": "g009",
+    "category": "period",
+    "rule": "Period film dialogue uses slightly formal Tamil but keeps the emotional core modern. Ancient words, contemporary feelings.",
+    "dialogue_style": "emotion"
+  },
+  {
+    "id": "g010",
+    "category": "social_drama",
+    "rule": "Social drama dialogues should sound like real people. No poetry, no punch. Raw, uncomfortable honesty.",
+    "dialogue_style": "emotion"
+  }
+]

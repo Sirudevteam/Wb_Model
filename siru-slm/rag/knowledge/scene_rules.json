@@ -1,0 +1,62 @@
+[
+  {
+    "id": "s001",
+    "category": "scene_structure",
+    "rule": "Tamil cinema climax scenes need escalating tension in dialogue. Start soft, build pressure, then one final devastating line.",
+    "applies_to": ["mass", "emotion"]
+  },
+  {
+    "id": "s002",
+    "category": "scene_structure",
+    "rule": "Introduction scenes (hero entry) should have exactly one mass dialogue. Less is more. The BGM carries the rest.",
+    "applies_to": ["mass"]
+  },
+  {
+    "id": "s003",
+    "category": "scene_structure",
+    "rule": "Confrontation scenes alternate between short and long lines. The villain speaks more, the hero speaks less. Silence from the hero = power.",
+    "applies_to": ["mass"]
+  },
+  {
+    "id": "s004",
+    "category": "scene_structure",
+    "rule": "Separation scenes (lovers/family parting) should have one character speaking while the other is silent. The silent character's reaction is the scene.",
+    "applies_to": ["emotion"]
+  },
+  {
+    "id": "s005",
+    "category": "scene_structure",
+    "rule": "Flashback emotional scenes use past tense and present tense alternating. 'Andha naal...' followed by 'Ippo...' creates temporal contrast.",
+    "applies_to": ["emotion"]
+  },
+  {
+    "id": "s006",
+    "category": "scene_structure",
+    "rule": "Revelation scenes (truth comes out) are where subtext becomes text. The character finally says what they've been hiding. Maximum impact.",
+    "applies_to": ["subtext", "emotion"]
+  },
+  {
+    "id": "s007",
+    "category": "scene_structure",
+    "rule": "Rain scenes in Tamil cinema amplify emotion. Dialogue during rain should be louder (mass) or whispered (emotion). Rain = external mirror of internal state.",
+    "applies_to": ["mass", "emotion"]
+  },
+  {
+    "id": "s008",
+    "category": "pacing",
+    "rule": "Action scene dialogue must be under 10 words. In between punches. No time for speeches.",
+    "applies_to": ["mass"]
+  },
+  {
+    "id": "s009",
+    "category": "pacing",
+    "rule": "Slow emotional scenes should have long pauses between lines. Each line is a paragraph of feeling compressed into one sentence.",
+    "applies_to": ["emotion"]
+  },
+  {
+    "id": "s010",
+    "category": "pacing",
+    "rule": "Dinner table scenes are perfect for subtext. Everyone talks about food while the real conversation happens underneath.",
+    "applies_to": ["subtext"]
+  }
+]
