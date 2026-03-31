@@ -15,22 +15,39 @@ from env_load import load_project_env
 
 load_project_env()
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.models.schemas import HealthResponse
-from api.routes.dialogue import router as dialogue_router
+from api.models.schemas import ApiResponse, ErrorDetails, HealthResponse
+from api.routes.dialogue import rewrite_service, router as dialogue_router, set_rag_retriever
 from api.routes.ideation import router as ideation_router
+from api.services.exceptions import ServiceError
+from api.services.health_service import HealthService
+from api.services.logger import configure_logging, get_logger
+from rag.retrieval import RAGRetriever
+
+APP_VERSION = "0.1.0"
+
+configure_logging(os.getenv("LOG_LEVEL", "INFO"))
+logger = get_logger("siru.api")
+
+
+def _allowed_origins() -> list[str]:
+    raw_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000")
+    origins = [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
+    return origins or ["http://localhost:3000"]
 
 app = FastAPI(
     title="Siru AI Labs -- Tamil Screenplay SLM",
     description="Tamil dialogue rewrite engine with Mass, Emotion, and Subtext modes",
-    version="0.1.0",
+    version=APP_VERSION,
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_allowed_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -40,42 +57,91 @@ app.include_router(dialogue_router)
 app.include_router(ideation_router)
 
 
-@app.get("/health", response_model=HealthResponse)
-async def health_check():
-    return HealthResponse(
-        status="healthy",
-        model_loaded=True,
-        version="0.1.0",
+@app.exception_handler(ServiceError)
+async def service_error_handler(_: Request, exc: ServiceError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=ApiResponse[dict](
+            success=False,
+            data=None,
+            error=ErrorDetails(code=exc.code, message=exc.message, details=exc.details),
+        ).model_dump(),
     )
+
+
+@app.exception_handler(RequestValidationError)
+async def validation_error_handler(_: Request, exc: RequestValidationError):
+    return JSONResponse(
+        status_code=422,
+        content=ApiResponse[dict](
+            success=False,
+            data=None,
+            error=ErrorDetails(
+                code="validation_error",
+                message="Request validation failed.",
+                details={"errors": exc.errors()},
+            ),
+        ).model_dump(),
+    )
+
+
+@app.exception_handler(Exception)
+async def unhandled_error_handler(_: Request, exc: Exception):
+    logger.exception("Unhandled API error: %s", exc)
+    return JSONResponse(
+        status_code=500,
+        content=ApiResponse[dict](
+            success=False,
+            data=None,
+            error=ErrorDetails(
+                code="internal_server_error",
+                message="An unexpected error occurred.",
+                details=None,
+            ),
+        ).model_dump(),
+    )
+
+
+@app.get("/health", response_model=ApiResponse[HealthResponse])
+async def health_check():
+    health_service = HealthService(
+        model_router=rewrite_service.model_router,
+        retrieval_service=rewrite_service.retrieval_service,
+        version=APP_VERSION,
+    )
+    result = health_service.get_health()
+    return ApiResponse(success=True, data=result, error=None)
 
 
 @app.get("/")
 async def root():
-    return {
-        "name": "Siru AI Labs -- Tamil Screenplay SLM",
-        "version": "0.1.0",
-        "endpoints": {
-            "POST /rewrite/dialogue": "General dialogue rewrite (specify mode in body)",
-            "POST /rewrite/mass": "Mass style rewrite",
-            "POST /rewrite/emotion": "Emotion style rewrite",
-            "POST /rewrite/subtext": "Subtext style rewrite",
-            "POST /ideate/scene": "70B base scene generation",
-            "GET /health": "Health check",
+    return ApiResponse(
+        success=True,
+        data={
+            "name": "Siru AI Labs -- Tamil Screenplay SLM",
+            "version": APP_VERSION,
+            "endpoints": {
+                "POST /rewrite/dialogue": "General dialogue rewrite (specify mode in body)",
+                "POST /rewrite/mass": "Mass style rewrite",
+                "POST /rewrite/emotion": "Emotion style rewrite",
+                "POST /rewrite/subtext": "Subtext style rewrite",
+                "POST /ideate/scene": "70B base scene generation",
+                "GET /health": "Health check",
+            },
         },
-    }
+        error=None,
+    )
 
 
 @app.on_event("startup")
 async def startup_event():
     try:
-        from rag.retrieval import RAGRetriever
         retriever = RAGRetriever()
-        from api.routes.dialogue import set_rag_retriever
         set_rag_retriever(retriever)
-        print("RAG retriever initialized.")
-    except Exception as e:
-        print(f"RAG retriever not available: {e}")
-        print("Running without RAG context injection.")
+        logger.info("RAG retriever initialized.")
+    except Exception as exc:
+        logger.warning("RAG retriever not available: %s", exc)
+        logger.warning("Running without RAG context injection.")
 
 
 if __name__ == "__main__":

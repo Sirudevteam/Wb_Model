@@ -19,11 +19,19 @@ class ModelRouter:
             self.ideation_model = clean_env(os.getenv("LLM_MODEL")) or "kimi-k2.5"
         self.slm_base_url = clean_env(os.getenv("SLM_BASE_URL")) or "http://localhost:8001/v1"
         self.slm_model = clean_env(os.getenv("SLM_MODEL_NAME")) or "siru-dialogue"
+        self.request_timeout = float(clean_env(os.getenv("SLM_TIMEOUT_SECONDS")) or "30")
 
         self._slm_client = None
 
     @property
     def slm_client(self):
         if self._slm_client is None:
-            self._slm_client = OpenAI(api_key="not-needed", base_url=self.slm_base_url)
+            self._slm_client = OpenAI(
+                api_key="not-needed",
+                base_url=self.slm_base_url,
+                timeout=self.request_timeout,
+            )
         return self._slm_client
+
+    def is_slm_configured(self) -> bool:
+        return bool(self.slm_base_url and self.slm_model)

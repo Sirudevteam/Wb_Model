@@ -1,8 +1,22 @@
 """Pydantic models for the Siru AI Labs API."""
 
-from typing import Literal, Optional
+from typing import Any, Generic, Literal, Optional, TypeVar
 
 from pydantic import BaseModel, Field
+
+T = TypeVar("T")
+
+
+class ErrorDetails(BaseModel):
+    code: str
+    message: str
+    details: Optional[dict[str, Any]] = None
+
+
+class ApiResponse(BaseModel, Generic[T]):
+    success: bool
+    data: Optional[T] = None
+    error: Optional[ErrorDetails] = None
 
 
 class RewriteRequest(BaseModel):
@@ -23,6 +37,7 @@ class HealthResponse(BaseModel):
     status: str
     model_loaded: bool
     version: str
+    checks: dict[str, str] = Field(default_factory=dict)
 
 
 class IdeateRequest(BaseModel):
@@ -35,3 +50,8 @@ class IdeateResponse(BaseModel):
     scene_description: str
     generated_scene: str
     model: str
+
+
+class HealthCheckResult(BaseModel):
+    status: str
+    checks: dict[str, str]

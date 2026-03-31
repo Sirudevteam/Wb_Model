@@ -37,6 +37,10 @@ Frontend (Next.js)
     Response
 ```
 
+Detailed architecture references:
+- [`docs/architecture.md`](docs/architecture.md)
+- [`ops/deployment_architecture.md`](ops/deployment_architecture.md)
+
 ## Project structure
 
 ```
@@ -157,6 +161,21 @@ curl -X POST http://localhost:8000/rewrite/dialogue \
   -d '{"text": "Naan indha ooru la pudhusu", "mode": "mass"}'
 ```
 
+Expected response shape:
+
+```json
+{
+  "success": true,
+  "data": {
+    "original": "Naan indha ooru la pudhusu",
+    "rewritten": "...",
+    "mode": "mass",
+    "rag_context_used": null
+  },
+  "error": null
+}
+```
+
 ## API endpoints
 
 | Method | Path | Description |
@@ -166,6 +185,33 @@ curl -X POST http://localhost:8000/rewrite/dialogue \
 | POST | `/rewrite/emotion` | Emotion style |
 | POST | `/rewrite/subtext` | Subtext style |
 | POST | `/ideate/scene` | Large remote model scene ideation |
+| GET | `/health` | Dependency-aware health check |
+
+## API response envelope
+
+Primary API endpoints return a consistent envelope:
+
+```json
+{
+  "success": true,
+  "data": {},
+  "error": null
+}
+```
+
+Errors return:
+
+```json
+{
+  "success": false,
+  "data": null,
+  "error": {
+    "code": "validation_error",
+    "message": "Request validation failed.",
+    "details": {}
+  }
+}
+```
 
 ## Product flow (dual model)
 
@@ -188,6 +234,10 @@ python ops/analyze_logs.py
 ```
 
 Roadmap notes: [`ops/expansion_roadmap.md`](ops/expansion_roadmap.md)
+
+Architecture and deployment docs:
+- [`docs/architecture.md`](docs/architecture.md)
+- [`ops/deployment_architecture.md`](ops/deployment_architecture.md)
 
 ## Troubleshooting: Moonshot / Kimi `401 Invalid Authentication`
 
