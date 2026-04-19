@@ -25,3 +25,9 @@
 1. One-click rewrite chips in editor
 2. Side-by-side diff view for before/after dialogue
 3. User rating capture after each rewrite (1-5)
+
+## Track 5: Model distribution (Hugging Face Hub)
+
+1. Keep **canonical weights** on the Hub (adapter and/or merged repos); document in [`huggingface_hosting_guide.md`](huggingface_hosting_guide.md).
+2. Optional: **Inference Endpoints** or **Spaces** for demos while the main product stays on FastAPI + vLLM.
+3. Version tags (`v0.1.0-adapter`) on Hub releases for reproducible deploys.

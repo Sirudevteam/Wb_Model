@@ -28,6 +28,12 @@ flowchart TD
     modelStore --> inference
 ```
 
+### Hugging Face Hub (optional)
+
+Weights can live on the **[Hugging Face Hub](https://huggingface.co/)** as the system of record: **LoRA-only** repos for small artifacts, or **merged** causal LM repos for simpler `from_pretrained` and managed **Inference Endpoints** / **Spaces**. This does not replace the FastAPI + vLLM topology unless you deliberately move inference to HF; it is an additional **artifact and hosting** path.
+
+See **[`huggingface_hosting_guide.md`](huggingface_hosting_guide.md)** for upload commands, tokens, gated Llama access, and Endpoint vs self-host tradeoffs.
+
 ### Environment Split
 - Local development
   - Run `frontend`, `api`, and `inference` locally.

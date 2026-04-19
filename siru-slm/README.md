@@ -62,7 +62,7 @@ Copy [`.env.example`](.env.example) to **`Writers Block Model/.env`** (workspace
 | Purpose | Variables |
 | ------- | --------- |
 | Remote LLM (dataset, augment, ideation) | `LLM_API_KEY`, `LLM_API_BASE`, `LLM_MODEL` — or `LLM_PROVIDER=replicate` + `REPLICATE_API_TOKEN` |
-| Hugging Face (gated / downloads) | `HF_TOKEN` |
+| Hugging Face (gated downloads, CLI upload) | `HF_TOKEN` — see [HF hosting guide](ops/huggingface_hosting_guide.md) |
 | Supabase RAG | `SUPABASE_URL`, `SUPABASE_KEY` |
 | OpenAI (embeddings) | `OPENAI_API_KEY` |
 | Inference + API wiring | `MODEL_PATH` (must match trained base), `LORA_PATH`, `SLM_BASE_URL`, ports — see `.env.example` |
@@ -235,9 +235,22 @@ python ops/analyze_logs.py
 
 Roadmap notes: [`ops/expansion_roadmap.md`](ops/expansion_roadmap.md)
 
-Architecture and deployment docs:
+Architecture, deployment, and Hub hosting:
+
 - [`docs/architecture.md`](docs/architecture.md)
 - [`ops/deployment_architecture.md`](ops/deployment_architecture.md)
+- [`ops/huggingface_hosting_guide.md`](ops/huggingface_hosting_guide.md)
+
+## Hosting weights on Hugging Face (Hub)
+
+To publish the **LoRA adapter** or a **merged full model** for `from_pretrained`, **Inference Endpoints**, or **Spaces** (no Ollama required on the Hub side):
+
+- **Full guide:** [`ops/huggingface_hosting_guide.md`](ops/huggingface_hosting_guide.md) — create a model repo, `huggingface-cli upload`, gated Llama access, merged vs adapter-only, security notes.
+
+Quick pointers:
+
+- **Adapter-only:** upload the contents of [`siru-dialogue-lora`](siru-dialogue-lora/) (or your `output_dir`); document base **`meta-llama/Llama-3.1-8B-Instruct`** on the model card.
+- **Merged folder:** run [`training/merge_lora_to_hf.py`](training/merge_lora_to_hf.py), then upload the output directory with `huggingface-cli upload user/repo . --repo-type model`.
 
 ## Export merged HF + convert to GGUF (Windows-friendly path)
 
@@ -245,6 +258,8 @@ If you want **local inference without WSL/vLLM**, the typical flow is merge LoRA
 
 - Merge script: [`training/merge_lora_to_hf.py`](training/merge_lora_to_hf.py)
 - Runbook: [`ops/gguf_conversion_runbook.md`](ops/gguf_conversion_runbook.md)
+
+For **Hub-only** hosting of weights (no GGUF), use the [Hugging Face hosting guide](ops/huggingface_hosting_guide.md) above instead of or in addition to GGUF.
 
 ## Troubleshooting: Moonshot / Kimi `401 Invalid Authentication`
 

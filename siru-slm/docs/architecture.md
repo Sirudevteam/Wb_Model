@@ -31,7 +31,7 @@
 - `training/`
   - Fine-tuning and evaluation pipeline for the LoRA adapter.
 - `ops/`
-  - Logs, runbooks, and deployment-oriented operational guidance.
+  - Logs, runbooks, and deployment-oriented operational guidance (including [Hugging Face Hub hosting](../ops/huggingface_hosting_guide.md)).
 
 ### Runtime Flow
 ```mermaid
@@ -86,6 +86,10 @@ On failure:
 ```
 
 This keeps the frontend stable even when transport and service errors differ.
+
+### Model artifacts on Hugging Face Hub
+
+Training produces a **LoRA adapter** (and optionally a **merged** full model). You may publish these to the Hub for versioning, collaboration, and managed inference; see [`ops/huggingface_hosting_guide.md`](../ops/huggingface_hosting_guide.md). The runtime diagram above still applies when inference pulls weights from Hub ids into your own GPU workers.
 
 ### Production Principles
 - Keep the API stateless and horizontally scalable.

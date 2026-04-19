@@ -480,6 +480,7 @@ For `siru-slm`, the most practical path is:
 7. download `siru-dialogue-lora`
 8. run local inference server and API
 9. test through API and UI
+10. *(optional)* publish the adapter or a merged model to the **Hugging Face Hub** — see [`huggingface_hosting_guide.md`](huggingface_hosting_guide.md) (`huggingface-cli upload`, private vs public repos, gated Llama tokens).
 
 ## 20. Final Checklist
 
