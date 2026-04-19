@@ -51,16 +51,26 @@ python3 -m pip install -r requirements.txt
 3. Locate the HF→GGUF converter script in your checkout:
 
 ```bash
-ls tools | sed -n '1,200p'
-python3 tools/convert_hf_to_gguf.py --help
+cd llama.cpp
+ls -1 convert*.py || true
+python3 convert_hf_to_gguf.py --help
 ```
 
-If the script path differs in your revision, use the `--help` discovery output to find the correct entrypoint.
+Notes:
+
+- In many `llama.cpp` revisions, `convert_hf_to_gguf.py` lives at the **repository root**, not in `tools/`.
+- Your `tools/` directory may contain **compiled binaries** (like `quantize`, `server`) after you build `llama.cpp`, which is separate from the Python conversion script.
+
+If `convert_hf_to_gguf.py` is not at the repo root, search for it:
+
+```bash
+find . -maxdepth 3 -name 'convert_hf_to_gguf.py' -print
+```
 
 4. Run conversion pointing at your merged HF folder:
 
 ```bash
-python3 tools/convert_hf_to_gguf.py /workspace/Wb_Model/siru-slm/merged-llama-3.1-8b-siru \
+python3 convert_hf_to_gguf.py /workspace/Wb_Model/siru-slm/merged-llama-3.1-8b-siru \
   --outfile /workspace/Wb_Model/siru-slm/artifacts/siru-llama3.1-8b-siru.gguf \
   --outtype f16
 ```
