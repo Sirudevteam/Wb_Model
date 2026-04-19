@@ -1,7 +1,7 @@
 model:
-  # meta-llama/Meta-Llama-3-8B needs HF login + Meta accepting your access (403 = not approved yet).
-  # Swap to that id once the model page shows you have access.
-  base: "Qwen/Qwen2.5-7B-Instruct"
+  # Llama "7B-class" instruct: use Meta's 8B instruct checkpoint (there is no standard HF "Llama-7B" id here).
+  # Requires HF_TOKEN + accepting the model license on the Hugging Face model page.
+  base: "meta-llama/Llama-3.1-8B-Instruct"
   output_dir: "./siru-dialogue-lora"
 
 lora:
@@ -22,7 +22,10 @@ training:
   gradient_accumulation_steps: 16
   warmup_ratio: 0.03
   max_seq_length: 512
-  fp16: true
+  # Mixed precision policy for Transformers/Accelerate:
+  # - auto: bf16 on modern GPUs (recommended on RTX 4090), else fp16 on CUDA, else fp32
+  # - bf16 / fp16 / fp32: force a mode (bf16 falls back to fp32 if unsupported)
+  dtype: auto
   logging_steps: 10
   save_steps: 50
   eval_steps: 50

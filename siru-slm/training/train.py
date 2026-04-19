@@ -143,6 +143,42 @@ def main():
         print(f"Validation samples: {len(val_dataset)}")
 
     output_dir = model_cfg["output_dir"]
+
+    def pick_mixed_precision() -> tuple[bool, bool]:
+        """
+        Choose safe AMP settings for Transformers + Accelerate.
+
+        On many modern GPUs (Ampere+), bfloat16 training is supported and avoids fp16 grad-scaler
+        edge cases with bf16-native checkpoints.
+        """
+        dtype_mode = str(train_cfg.get("dtype", "auto")).lower()
+
+        if dtype_mode in {"fp32", "float32", "full", "full_fp32"}:
+            return False, False
+        if dtype_mode in {"bf16", "bfloat16"}:
+            if torch.cuda.is_available() and torch.cuda.is_bf16_supported():
+                return True, False
+            print(
+                "[WARN] dtype=bf16 requested, but this GPU does not advertise bf16 support. "
+                "Falling back to fp32 (set dtype=fp16 to force fp16 on older GPUs).\n"
+            )
+            return False, False
+        if dtype_mode in {"fp16", "float16"}:
+            if not torch.cuda.is_available():
+                print("[WARN] dtype=fp16 requested but CUDA is not available. Falling back to fp32.\n")
+                return False, False
+            return False, True
+
+        # auto
+        if torch.cuda.is_available() and torch.cuda.is_bf16_supported():
+            return True, False
+        if torch.cuda.is_available():
+            return False, True
+        return False, False
+
+    bf16, fp16 = pick_mixed_precision()
+    print(f"Mixed precision: bf16={bf16}, fp16={fp16}")
+
     training_args = SFTConfig(
         output_dir=output_dir,
         num_train_epochs=train_cfg["epochs"],
@@ -150,7 +186,8 @@ def main():
         gradient_accumulation_steps=train_cfg["gradient_accumulation_steps"],
         learning_rate=train_cfg["learning_rate"],
         warmup_ratio=train_cfg["warmup_ratio"],
-        fp16=train_cfg.get("fp16", True),
+        bf16=bf16,
+        fp16=fp16,
         logging_steps=train_cfg.get("logging_steps", 10),
         save_steps=train_cfg.get("save_steps", 50),
         eval_steps=train_cfg.get("eval_steps", 50) if val_dataset else None,
