@@ -239,6 +239,13 @@ Architecture and deployment docs:
 - [`docs/architecture.md`](docs/architecture.md)
 - [`ops/deployment_architecture.md`](ops/deployment_architecture.md)
 
+## Export merged HF + convert to GGUF (Windows-friendly path)
+
+If you want **local inference without WSL/vLLM**, the typical flow is merge LoRA to a full HF folder, then convert to **GGUF** for **Ollama / llama.cpp**:
+
+- Merge script: [`training/merge_lora_to_hf.py`](training/merge_lora_to_hf.py)
+- Runbook: [`ops/gguf_conversion_runbook.md`](ops/gguf_conversion_runbook.md)
+
 ## Troubleshooting: Moonshot / Kimi `401 Invalid Authentication`
 
 Keys are **region-specific**. A key from [platform.moonshot.ai](https://platform.moonshot.ai) must use `LLM_API_BASE=https://api.moonshot.ai/v1`. A China-console key must use `https://api.moonshot.cn/v1`. Mixing key and base URL causes 401.
@@ -255,7 +262,7 @@ Full defaults: [`training/config.yaml`](training/config.yaml).
 
 | Setting | Value |
 | ------- | ----- |
-| Base model | `Qwen/Qwen2.5-7B-Instruct` (optional: `meta-llama/Meta-Llama-3-8B` after HF access) |
+| Base model | `meta-llama/Llama-3.1-8B-Instruct` (or swap back to `Qwen/Qwen2.5-7B-Instruct`) |
 | Method | QLoRA — 4-bit NF4, double quant |
 | LoRA | r=16, α=32, targets `q/k/v/o_proj` |
 | Schedule | 3 epochs, LR `2e-4`, cosine warmup |

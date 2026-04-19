@@ -21,3 +21,4 @@ dataset/raw_outputs.json
 dataset/filtered.jsonl
 dataset/final_train.jsonl
 training/eval_results.json
+ops/events.jsonl
