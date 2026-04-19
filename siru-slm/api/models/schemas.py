@@ -50,8 +50,3 @@ class IdeateResponse(BaseModel):
     scene_description: str
     generated_scene: str
     model: str
-
-
-class HealthCheckResult(BaseModel):
-    status: str
-    checks: dict[str, str]
